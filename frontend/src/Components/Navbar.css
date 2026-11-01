@@ -1,0 +1,74 @@
+/* Navbar */
+.jira-navbar {
+  background-color: var(--jira-bg);
+  border-bottom: 1px solid var(--jira-border);
+  box-shadow: var(--shadow-sm);
+  padding: 10px 0;
+}
+
+/* Brand / Logo */
+.jira-brand {
+  color: var(--jira-heading) !important;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.jira-brand:hover {
+  color: var(--jira-primary) !important;
+}
+
+/* Navigation links */
+.jira-nav-link {
+  color: var(--jira-text) !important;
+  font-size: var(--font-sm);
+  font-weight: 500;
+  margin: 0 8px;
+  transition: color 0.2s ease;
+}
+
+.jira-nav-link:hover,
+.jira-nav-link.active {
+  color: var(--jira-primary) !important;
+}
+
+/* Dropdown menu */
+.jira-navbar .dropdown-menu {
+  border: 1px solid var(--jira-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: 6px;
+}
+
+.jira-navbar .dropdown-item {
+  color: var(--jira-text);
+  font-size: var(--font-sm);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+}
+
+.jira-navbar .dropdown-item:hover {
+  background-color: var(--jira-bg-secondary);
+  color: var(--jira-primary);
+}
+
+/* Navbar toggle button (mobile) */
+.jira-navbar .navbar-toggler {
+  border: 1px solid var(--jira-border);
+  box-shadow: none;
+}
+
+.jira-navbar .navbar-toggler:focus {
+  box-shadow: 0 0 0 2px var(--jira-primary-light);
+}
+
+/* Responsive spacing */
+@media (max-width: 991px) {
+  .jira-navbar .navbar-collapse {
+    padding-top: 12px;
+  }
+
+  .jira-nav-link {
+    margin: 4px 0;
+  }
+}
