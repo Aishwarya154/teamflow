@@ -2,28 +2,21 @@
     position: fixed;
     inset: 0;
     z-index: 1000;
-    width: 100vw;
+    width: 100%;
     min-height: 100vh;
     min-height: 100dvh;
     box-sizing: border-box;
     overflow-y: auto;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 32px 18px;
+
+    padding: 30px 18px;
     isolation: isolate;
 
     background:
-        radial-gradient(ellipse at 12% 18%,
-            rgba(81, 142, 255, 0.19),
-            transparent 35%),
-        radial-gradient(ellipse at 88% 82%,
-            rgba(164, 132, 255, 0.17),
-            transparent 35%),
-        linear-gradient(135deg,
-            #edf3ff 0%,
-            #f8faff 48%,
-            #f0efff 100%);
+        url("/images/bg.webp") center center / cover no-repeat;
 
     font-family: "Geist Variable", Arial, sans-serif;
     color: #172b4d;
@@ -31,20 +24,18 @@
 
 .auth-scene::before {
     content: "";
-    position: absolute;
+    position: fixed;
     inset: 0;
     z-index: -1;
     pointer-events: none;
 
     background-image:
-        linear-gradient(rgba(75, 106, 160, 0.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(75, 106, 160, 0.045) 1px, transparent 1px);
+        linear-gradient(rgba(24, 104, 219, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(24, 104, 219, 0.025) 1px, transparent 1px);
 
-    background-size: 48px 48px;
+    background-size: 50px 50px;
 
-    mask-image: radial-gradient(ellipse at center,
-            black 15%,
-            transparent 85%);
+    mask-image: radial-gradient(ellipse at center, black 5%, transparent 85%);
 }
 
 .auth-decoration {
@@ -54,103 +45,129 @@
     border-radius: 50%;
 }
 
+/* Subtle decorative shape on the left */
+
 .auth-decoration-one {
-    width: 340px;
-    height: 340px;
-    top: -130px;
-    left: -100px;
-    border: 1px solid rgba(65, 120, 230, 0.15);
+    width: 230px;
+    height: 230px;
+    left: -125px;
+    bottom: 12%;
+
+    border: 1px solid rgba(0, 184, 217, 0.2);
+
     box-shadow:
-        0 0 0 30px rgba(65, 120, 230, 0.025),
-        0 0 0 65px rgba(65, 120, 230, 0.02);
+        0 0 0 22px rgba(0, 184, 217, 0.025),
+        0 0 0 48px rgba(0, 184, 217, 0.02);
 }
 
+/* Soft blue decorative glow on the right */
+
 .auth-decoration-two {
-    width: 420px;
-    height: 420px;
+    width: 350px;
+    height: 350px;
     right: -180px;
-    bottom: -190px;
+    top: 16%;
+
     background: radial-gradient(circle,
-            rgba(132, 112, 255, 0.15),
-            rgba(132, 112, 255, 0.025) 65%,
+            rgba(24, 104, 219, 0.10),
+            rgba(24, 104, 219, 0.025) 65%,
             transparent 72%);
 }
 
+/* Small accent ring */
+
 .auth-decoration-three {
-    width: 100px;
-    height: 100px;
-    top: 18%;
-    right: 15%;
-    border: 1px solid rgba(65, 120, 230, 0.15);
-    box-shadow: inset 0 0 25px rgba(65, 120, 230, 0.06);
+    width: 75px;
+    height: 75px;
+    top: 20%;
+    right: 16%;
+
+    border: 1px solid rgba(0, 184, 217, 0.22);
+
+    box-shadow: inset 0 0 22px rgba(0, 184, 217, 0.05);
 }
+
+/* Main authentication card */
 
 .auth-card {
+    position: relative;
+    z-index: 1;
+
     width: 100%;
-    max-width: 420px;
+    max-width: 400px;
+
     box-sizing: border-box;
     margin: auto;
-    padding: 30px 34px 23px;
+    padding: 34px 39px 24px;
 
-    background: rgba(255, 255, 255, 0.97);
-    border: 1px solid #e3e8f0;
-    border-radius: 14px;
+    background: #ffffff;
+
+    border: 1px solid #ebecf0;
+    border-radius: 5px;
 
     box-shadow:
-        0 20px 60px rgba(30, 55, 100, 0.09),
-        0 3px 10px rgba(30, 55, 100, 0.04);
-
-    backdrop-filter: blur(16px);
+        0 3px 15px rgba(9, 30, 66, 0.10),
+        0 1px 3px rgba(9, 30, 66, 0.06);
 }
+
+/* TeamFlow top branding */
 
 .auth-brand {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
+
     margin-bottom: 27px;
 }
 
 .auth-brand-mark {
-    width: 39px;
-    height: 39px;
+    width: 36px;
+    height: 36px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
 
-    background: linear-gradient(135deg, #1868db, #6557d2);
+    border-radius: 8px;
+
+    background: linear-gradient(135deg, #1868db, #0c66e4);
     color: #ffffff;
 
     font-size: 13px;
     font-weight: 800;
     letter-spacing: -0.5px;
 
-    box-shadow: 0 4px 10px rgba(24, 104, 219, 0.23);
+    box-shadow: 0 2px 5px rgba(24, 104, 219, 0.18);
 }
 
 .auth-brand-name {
-    color: #172b4d;
+    color: #1868db;
+
     font-size: 25px;
-    font-weight: 700;
-    letter-spacing: -1px;
+    font-weight: 750;
+    letter-spacing: -0.8px;
 }
 
 .auth-card-content {
     width: 100%;
 }
 
+/* Footer divider */
+
 .auth-card-divider {
     height: 1px;
-    margin: 27px 0 18px;
-    background: #e6eaf0;
+    margin: 25px 0 19px;
+    background: #dfe1e6;
 }
+
+/* Card footer */
 
 .auth-card-footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 11px;
 }
 
 .auth-footer-brand {
@@ -158,19 +175,23 @@
     align-items: center;
     gap: 7px;
 
-    color: #44546f;
+    color: #626f86;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 750;
+    letter-spacing: 0.4px;
 }
 
 .auth-footer-mark {
-    width: 22px;
-    height: 22px;
+    width: 21px;
+    height: 21px;
+
     display: grid;
     place-items: center;
-    border-radius: 6px;
-    background: #1868db;
-    color: white;
+
+    border-radius: 5px;
+    background: #626f86;
+    color: #ffffff;
+
     font-size: 9px;
     font-weight: 800;
 }
@@ -181,6 +202,7 @@
     align-items: center;
     justify-content: center;
     gap: 9px;
+
     font-size: 11px;
 }
 
@@ -194,22 +216,54 @@
     text-decoration: underline;
 }
 
+/* Tablet */
+
+@media (max-width: 768px) {
+    .auth-card {
+        max-width: 390px;
+        padding: 32px 30px 23px;
+    }
+
+    .auth-decoration-three {
+        right: 8%;
+    }
+}
+
+/* Mobile */
+
 @media (max-width: 480px) {
     .auth-scene {
         padding: 20px 14px;
     }
 
     .auth-card {
-        padding: 25px 21px 20px;
-        border-radius: 11px;
-    }
-
-    .auth-decoration-three {
-        display: none;
+        max-width: 100%;
+        padding: 27px 22px 21px;
+        border-radius: 5px;
     }
 
     .auth-brand {
         margin-bottom: 24px;
+    }
+
+    .auth-brand-name {
+        font-size: 23px;
+    }
+
+    .auth-decoration-one,
+    .auth-decoration-two,
+    .auth-decoration-three {
+        display: none;
+    }
+}
+
+/* Short screens: allow scrolling instead of clipping the card */
+
+@media (max-height: 600px) {
+    .auth-scene {
+        align-items: flex-start;
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
 }
 
@@ -217,4 +271,12 @@
     .auth-scene {
         scroll-behavior: auto;
     }
+}
+
+.auth-scene::before {
+    display: none;
+}
+
+.auth-decoration {
+    display: none;
 }
