@@ -16,10 +16,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Colleague's existing homepage */}
+        {/* homepage */}
         <Route path="/" element={<Homepage />} />
 
-        {/* Your authentication pages */}
+        {/* authentication pages */}
         <Route path="/login" element={<Login />} />
 
         <Route

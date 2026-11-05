@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import AuthLayout from "../components/AuthLayout";
@@ -21,7 +20,6 @@ function VerifyOTP() {
         }
 
         // TODO: Call POST /api/verify-otp/ here.
-        // This navigation is only for frontend testing.
         navigate("/reset-password", {
             state: { email },
         });

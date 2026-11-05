@@ -1,4 +1,3 @@
-
 import "./AuthLayout.css";
 
 function AuthLayout({ children }) {

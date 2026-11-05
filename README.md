@@ -1,4 +1,3 @@
-
 TeamFlow
 Collaborative project management platform built by a student engineering team.
 
